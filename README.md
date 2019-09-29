@@ -17,7 +17,7 @@ void objc_autoreleasePoolPop(void *ctxt) {
 ```
 ## AutoreleasePoolPage, 双向链表
 * [源码下载](https://opensource.apple.com/tarballs/objc4/)
-* 简析
+* 结构
 ```
 class AutoreleasePoolPage {
    magic_t const magic; //完整性校验
@@ -29,11 +29,10 @@ class AutoreleasePoolPage {
    uint32_t hiwat
 }
 ```
-
-## autoreleasePoolPage
-### 结构  [!img1](/autoreleasePoolPage.jpg)
-### 入栈流程
  ---------------------------------------------------------------------------------------
+### 栈  ![img1](/autoreleasePoolPage.jpg)
+### 入栈流程
+
 * push()
 ```
 static inline void *push() 
