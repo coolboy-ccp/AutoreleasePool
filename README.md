@@ -16,7 +16,7 @@ void objc_autoreleasePoolPop(void *ctxt) {
 
 ```
 ## AutoreleasePoolPage, 双向链表
-* [源码下载]((https://opensource.apple.com/tarballs/objc4/))
+* [源码下载](https://opensource.apple.com/tarballs/objc4/)
 * 简析
 ```
 class AutoreleasePoolPage {
@@ -33,7 +33,7 @@ class AutoreleasePoolPage {
 ## autoreleasePoolPage
 ### 结构  [!img1](/autoreleasePoolPage.jpg)
 ### 入栈流程
-* ---------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------
 * push()
 ```
 static inline void *push() 
@@ -122,7 +122,7 @@ static __attribute__((noinline))
 
 * AutoreleasePoolPage::pop(ctxt);
    调用pop方法时传入一个POOL_BOUNDARY的内存地址，会从最后一个入栈的对象开始发送release消息，直到遇到这个POOL_BOUNDARY(因为是双向链表,所以可以向上寻找)
-* ---------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------
 ### 出栈
 
 * pop()
@@ -249,7 +249,7 @@ void kill()
       } while (deathptr != this);
   }
 ```
-
+ ---------------------------------------------------------------------------------------
 ### runloop
 App启动后，苹果在主线程 RunLoop 里注册了两个 Observer，其回调都是 _wrapRunLoopWithAutoreleasePoolHandler()。
 
